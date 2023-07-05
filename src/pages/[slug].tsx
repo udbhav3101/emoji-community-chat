@@ -23,7 +23,7 @@ const ProfileFeed = (props: { userId: string }) => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col">
       {data.map((fullPost) => (
         <PostView {...fullPost} key={fullPost.post.id} />
       ))}
@@ -44,13 +44,13 @@ const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
         <title>{data.username}</title>
       </Head>
       <Layout>
-        <div className="relative h-48 border-b border-slate-400 bg-slate-900">
+        <div className="relative h-36 bg-slate-600">
           <Image
             src={data.profileImageUrl}
             alt={`${data.username ?? ""} Profile picture`}
             width={128}
             height={128}
-            className="absolute bottom-0 left-0 -mb-[64px] ml-4 rounded-full border-4 border-black"
+            className="absolute bottom-0 left-0 -mb-[64px] ml-4 rounded-full border-4 border-black bg-black"
           />
         </div>
         <div className="h-[64px]"></div>
